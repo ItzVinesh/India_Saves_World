@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>India Saves Lifes</title>
+<body>
+    
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Chatbot</h1>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <div class="message bot">Welcome to the Medica Chatbot. How can I assist you?</div>
+        </div><br>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script>
+          const chatBox = document.getElementById("chat-box");
+        const userInput = document.getElementById("user-input");
+        const sendButton = document.getElementById("send-button");
+
+        function appendMessage(message, sender) {
+            const messageDiv = document.createElement("div");
+            messageDiv.className = `message ${sender}`;
+            messageDiv.innerHTML = message; 
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        function handleUserInput() {
+            const userMessage = userInput.value.trim();
+            if (userMessage === "") return;
+
+            appendMessage(userMessage, "user");
+            let botResponse = generateBotResponse(userMessage);
+
+            appendMessage(botResponse, "bot");
+            userInput.value = "";
+        }
+        function generateBotResponse(userMessage) {
+            const lowerCaseMessage = userMessage.toLowerCase();
+
+            if (lowerCaseMessage.includes("do not tell me")) {
+                return "ok";
+            } else if (lowerCaseMessage.includes("keep quiet")) {
+                return "ok";
+            } else if (lowerCaseMessage.includes("dont inform me")) {
+                return "ok";
+            } else if (lowerCaseMessage.includes("organs")) {
+                return "Organ transplant is a medical procedure where a healthy organ or tissue is surgically removed from a donor and transplanted into a recipient to replace a damaged or failing organ.";
+            } else if (lowerCaseMessage.includes("organ")) {
+                return "Organ transplant is a medical procedure where a healthy organ or tissue is surgically removed from a donor and transplanted into a recipient to replace a damaged or failing organ.";
+            } else if (lowerCaseMessage.includes("ok")) {
+                return "Any other thing for which I can assist you?";
+            } else if (lowerCaseMessage.includes("no")) {
+                return "Ok! Thank you for using me!!";
+            } else if (lowerCaseMessage.includes("liver")) {
+                return "The hospital for your desiese are as follows :- <br> Apollo Hospital, New Delhi <br> Medanta Hospital, Mumbai <br> Fortis, Indore <br> Please enter your desired hospital name";
+            } else if (lowerCaseMessage.includes("apollo hospital, new delhi")) {
+                return "Success Rate - 93% <br> Total beds - 350 <br> Total doctor - 200 <br> Price - ₹200000 <br> Contact - 8563343323 ";
+            } else if (lowerCaseMessage.includes("medanta hospital, mumbai")) {
+                return "Success Rate - 89% <br> Total beds - 400 <br> Total doctor - 150 <br> Price - ₹300000 <br> Contact - 7464464525 ";
+            } else if (lowerCaseMessage.includes("fortis, indore")) {
+                return "Success Rate - 83% <br> Total beds - 450 <br> Total doctor - 180 <br> Price - ₹250000 <br> Contact -  464468654";
+            }  else if (lowerCaseMessage.includes("heart")) {
+                return "The hospital for your desiese are as follows :- <br> Apollo Hospital, Indore <br> Medanta Hospital, New Delhi <br> Fortis, Chennai <br> Please enter your desired hospital name";
+            } else if (lowerCaseMessage.includes("apollo hospital, indore")) {
+                return "Success Rate - 85% <br> Total beds - 250 <br> Total doctor - 190 <br> Price - ₹2000000 <br> Contact -  8735464856";
+            } else if (lowerCaseMessage.includes("medanta hospital, new delhi")) {
+                return "Success Rate - 90% <br> Total beds - 300 <br> Total doctor - 150 <br> Price - ₹3000000 <br> Contact -  145212432";
+            } else if (lowerCaseMessage.includes("fotris, chennai")) {
+                return "Success Rate - 94% <br> Total beds - 400 <br> Total doctor - 200 <br> Price - ₹2500000 <br> Contact -  3468546664";
+            } else if (lowerCaseMessage.includes("lungs")) {
+                return "The hospital for your desiese are as follows :- <br> Apollo Hospital, Mumbai <br> Medanta Hospital, Chennai <br> Fortis, New Delhi <br> Please enter your desired hospital name";
+            } else if (lowerCaseMessage.includes("apollo hostiptal, mumbai")) {
+                return "Success Rate - 90% <br> Total beds - 200 <br> Total doctor - 350 <br> Price - ₹3000000 <br> Contact -  2463146563";
+            } else if (lowerCaseMessage.includes("medanta hospital, chennai")) {
+                return "Success Rate - 80% <br> Total beds - 360 <br> Total doctor - 200 <br> Price - ₹2000000 <br> Contact -  46815435456";
+            } else if (lowerCaseMessage.includes("fotris, new delhi")) {
+                return "Success Rate - 80% <br> Total beds - 400 <br> Total doctor - 150 <br> Price - ₹4000000 <br> Contact -  54686565564";
+            } 
+            else {
+                return "I'm sorry, I don't understand that. Please provide more details like organ name & hospital name";
+            }
+        }
+        sendButton.addEventListener("click", handleUserInput);
+
+        userInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                handleUserInput();
+            }
+        });
+    </script>
+</body>
+</html>

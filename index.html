@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+	!
+<head>
+		<title>India Saves Lifes</title>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		 <meta charset="utf-8">
+		 <meta name="author" content="http://themeforest.net/user/CreativeWS/portfolio">
+		 <meta name="keywords" content="">
+		 <meta name="description" content="">
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		 <link rel="stylesheet" type="text/css" href="css/layerslider.css">
+		 <link rel="stylesheet" type="text/css" href="css/fullwidth/skin.css">
+		 <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		 <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+		 <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+		 <link rel="stylesheet" type="text/css" href="css/styles.css">
+		 <link rel="stylesheet" type="text/css" href="css/color-blue.css">
+		 <link rel="stylesheet" type="text/css" href="tuner/css/styles.css">
+	 
+	 <style>			 html, body {
+				 height: 100%;
+				 width: 100%;
+				 margin: 0;
+				 padding: 0;
+				 overflow: hidden;
+			 }
+	 
+			 .page {
+				 height: 100%;
+				 width: 100%;
+				 overflow: auto;
+			 }
+	 			 .slider-wrapper {
+				 height: 100vh;
+			 }
+			 .liver-treatment-box {
+				width: 100%;
+				height: 100%;
+				padding: 20px;
+				box-sizing: border-box; 
+			}
+		 </style>
+	</head>
+	
+	<body>
+		<div class="page">
+			<header class="page-header main-page sticky">
+				<div class="sticky-wrapp">
+					<div class="sticky-container">						
+						<section id="logo" class="logo">
+							<div>
+								<a href="index.html"><img src="img/blue/logo.png" alt="Clinico" height="2000px" width="500%"></a>
+							</div>
+						</section>
+						<nav class="main-nav">
+							<ul>
+								<li>
+									<a href="index.html" class="active"><i class="fa fa-plus"></i>Home</a>
+								</li>
+								<li class="right">
+									<a href="#"><i class="fa fa-plus"></i>Best Hospitals</a>
+									<ul>
+										<li>
+											<a href="#">Fortis</a>
+											<ul>
+												<li><a href="fortis-chennai.html">Chennai</a></li>
+												<li><a href="fortis-mumbai.html">Mumbai</a></li>
+												<li><a href="fortis-indore.html">Indore</a></li>
+												<li><a href="fortis-delhi.html">Delhi</a></li>
+											</ul>
+										</li>
+										<li>
+											
+											<a href="#">Apollo</a>
+											<ul>
+												<li><a href="apollo-chennai.html">Chennai</a></li>
+												<li><a href="apollo-mumbai.html">Mumbai</a></li>
+												<li><a href="apollo-indore.html">Indore</a></li>
+												<li><a href="apollo-delhi.html">Delhi</a></li>
+											</ul>
+										</li>
+										<li>
+											
+											<a href="#">Medanta</a>
+											<ul>
+												<li><a href="medanta-chennai.html">Chennai</a></li>
+												<li><a href="medanta-mumbai.html">Mumbai</a></li>
+												<li><a href="medanta-indore.html">Indore</a></li>
+												<li><a href="medanta-delhi.html">Delhi</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-plus"></i>List of Services</a>
+									<ul>
+										<li><a href="heart.html">Heart Transplant</a></li>
+										<li><a href="liver.html">Liver Transplant</a></li>
+										<li><a href="lungs.html">Lungs Transplant</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+				</div>
+			</header>
+			<form id="quick-search" class="quick-search">
+				<fieldset>
+					<div class="chat-container">
+      
+        <div class="chat-box" id="chat-box">
+            <div class="message bot">Welcome to the Medica Chatbot. How can I assist you?</div>
+        </div><br>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Please Press Enter Button</button>
+        </div>
+    </div>
+    <script>
+        const chatBox = document.getElementById("chat-box");
+        const userInput = document.getElementById("user-input");
+        const sendButton = document.getElementById("send-button");
+
+        function appendMessage(message, sender) {
+            const messageDiv = document.createElement("div");
+            messageDiv.className = `message ${sender}`;
+            messageDiv.innerHTML = message; 
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        function handleUserInput() {
+            const userMessage = userInput.value.trim();
+            if (userMessage === "") return;
+
+            appendMessage(userMessage, "user");
+
+            let botResponse = generateBotResponse(userMessage);
+
+            appendMessage(botResponse, "bot");
+            userInput.value = "";
+        }
+        function generateBotResponse(userMessage) {
+            const lowerCaseMessage = userMessage.toLowerCase();
+
+            if (lowerCaseMessage.includes("do not tell me")) {
+                return "ok";
+            } else if (lowerCaseMessage.includes("keep quiet")) {
+                return "ok";
+            } else if (lowerCaseMessage.includes("dont inform me")) {
+                return "ok";
+            } else if (lowerCaseMessage.includes("organs")) {
+                return "Organ transplant is a medical procedure where a healthy organ or tissue is surgically removed from a donor and transplanted into a recipient to replace a damaged or failing organ.";
+            } else if (lowerCaseMessage.includes("organ")) {
+                return "Organ transplant is a medical procedure where a healthy organ or tissue is surgically removed from a donor and transplanted into a recipient to replace a damaged or failing organ.";
+            } else if (lowerCaseMessage.includes("ok")) {
+                return "Any other thing for which I can assist you?";
+            } else if (lowerCaseMessage.includes("no")) {
+                return "Ok! Thank you for using me!!";
+            } else if (lowerCaseMessage.includes("liver")) {
+                return "The hospital for your desiese are as follows :- <br> Apollo Hospital, New Delhi <br> Kokilaben Hospital, Mumbai <br> Fortis, Gurgaon <br> Please enter your desired hospital name";
+            } else if (lowerCaseMessage.includes("apollo")) {
+                return "Success Rate - 93% <br> Total beds - 350 <br> Total doctor - 200 <br> Price - ₹200000 <br> Contact - 8563343323 ";
+            } else if (lowerCaseMessage.includes("dhirubhai")) {
+                return "Success Rate - 89% <br> Total beds - 400 <br> Total doctor - 150 <br> Price - ₹300000 <br> Contact - 7464464525 ";
+            } else if (lowerCaseMessage.includes("fortis")) {
+                return "Success Rate - 83% <br> Total beds - 450 <br> Total doctor - 180 <br> Price - ₹250000 <br> Contact -  464468654";
+            }  else if (lowerCaseMessage.includes("heart")) {
+                return "The hospital for your desiese are as follows :- <br> Frius Hospital, Indore <br> Meaz Hospital, Mumabai <br> Asian Hospital, Ujjain <br> Please enter your desired hospital name";
+            } else if (lowerCaseMessage.includes("olooo")) {
+                return "Success Rate - 85% <br> Total beds - 250 <br> Total doctor - 190 <br> Price - ₹2000000 <br> Contact -  8735464856";
+            } else if (lowerCaseMessage.includes("meaz")) {
+                return "Success Rate - 90% <br> Total beds - 300 <br> Total doctor - 150 <br> Price - ₹3000000 <br> Contact -  145212432";
+            } else if (lowerCaseMessage.includes("asian")) {
+                return "Success Rate - 94% <br> Total beds - 400 <br> Total doctor - 200 <br> Price - ₹2500000 <br> Contact -  3468546664";
+            } else if (lowerCaseMessage.includes("lungs")) {
+                return "The hospital for your desiese are as follows :- <br> Queen Hospital, Bhopal <br> Pexe Hospital, Delhi <br> Laqe Hospital Amritsar <br> Please enter your desired hospital name";
+            } else if (lowerCaseMessage.includes("queen")) {
+                return "Success Rate - 90% <br> Total beds - 200 <br> Total doctor - 350 <br> Price - ₹3000000 <br> Contact -  2463146563";
+            } else if (lowerCaseMessage.includes("pexe")) {
+                return "Success Rate - 80% <br> Total beds - 360 <br> Total doctor - 200 <br> Price - ₹2000000 <br> Contact -  46815435456";
+            } else if (lowerCaseMessage.includes("leqe")) {
+                return "Success Rate - 80% <br> Total beds - 400 <br> Total doctor - 150 <br> Price - ₹4000000 <br> Contact -  54686565564";
+            } 
+            else {
+                return "I'm sorry, I don't understand that. Please provide more details like organ name & hospital name";
+            }
+        }
+        sendButton.addEventListener("click", handleUserInput);
+
+        userInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                handleUserInput();
+            }
+        });
+    </script>
+					<div class="switcher">
+						<button id="quick-search-switcher" type="button">Find a doctor</button>
+					</div>
+				</fieldset>				
+			</form>
+			<div class="slider-wrapper">
+				<section class="slider" id="slider">
+					<div class="ls-slide" data-ls="transition2d:9;slidedelay:7000;">					
+						<img src="pic/medical-slide-2.jpg" alt="" class="ls-bg">
+						
+						<div class="intro ls-l" data-ls="offsetyin:top;offsetxin:0;durationin:2000;offsetyout:bottom;offsetxout:0;durationout:1000;" style="left:80%;top:35%;">
+							<span class="icon fa fa-heart"></span>
+							<h2><span>SYMPTOM</span>CHECKER</h2>
+							<p>Vestibulum rutrum luctus porta. Maecenas elit nibh</p>
+							<div class="buttons">
+								<a href="#" class="prev"><i class="fa fa-angle-left"></i></a><!--
+								--><a href="#" class="button">Read More</a><!--
+								--><a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="ls-slide" data-ls="transition2d:40;slidedelay:7000;">				
+						<img src="pic/medical-slide-1.jpg" alt="" class="ls-bg">
+						
+						<div class="intro ls-l" data-ls="scalexin:0.3;scaleyin:0.3;rotatexin:180;offsetxin:0;durationin:2000;durationout:2000;scalexout:2;scaleyout:2;offsetxout:0;fadeout:true;showuntil:3000;" style="left:80%;top:35%;">
+							<span class="icon fa fa-comments"></span>
+							<h2><span>HELP</span>ONLINE</h2>
+							<p>Vestibulum rutrum luctus porta. Maecenas elit nibh</p>
+							<div class="buttons">
+								<a href="#" class="prev"><i class="fa fa-angle-left"></i></a><!--
+								--><a href="#" class="button">Read More</a><!--
+								--><a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="ls-slide" data-ls="transition2d:11;slidedelay:7000;">
+						<img src="pic/medical-slide-2.jpg" alt="" class="ls-bg">
+						
+						<div class="intro ls-l" data-ls="skewxin:30;skewyin:0;offsetxin:right;fadein:false;durationin:2000;durationout:1000;offsetxout:right;offsetyout:0;fadeout:true;" style="left:80%;top:35%;">
+							<span class="icon fa fa-flask"></span>
+							<h2><span>LAB</span>TESTING</h2>
+							<p>Vestibulum rutrum luctus porta. Maecenas elit nibh</p>
+							<div class="buttons">
+								<a href="#" class="prev"><i class="fa fa-angle-left"></i></a><!--
+								--><a href="#" class="button">Read More</a><!--
+								--><a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<main class="page-content">
+				<div class="grid-row">
+					<section class="benefits">
+						<ul>
+							<li>
+								<div class="pic"><i class="fa fa-heart"></i></div>
+								<div class="text">
+									<h2>Heart</h2>
+									<p>India provides the best doctor for heart treatment in the world with very low cost.</p>
+									<a href="heart.html" class="more"></a>
+								</div>
+							</li>
+							<li>
+								<div class="pic"><div class="pic"><i class="fa fa-stethoscope" aria-hidden="true"></i></div>
+							</div>
+								<div class="text">
+									<h2>Lungs</h2>
+									<p>India provides the best best doctor for lungs treatment at very low budget.</p>
+									<a href="lungs.html" class="more"></a>
+								</div>
+							</li>
+							<li>
+								<div class="pic"><i class="fa fa-stethoscope" aria-hidden="true"></i></div>
+								<div class="text">
+									<h2>Liver</h2>
+									<p>India provides the best doctor for liver treatment with very low cost.</p>
+									<a href="heart.html" class="more"></a>
+								</div>
+							</li>
+							<li>
+								<div class="pic"><i class="fa fa-comments-o"></i></div>
+								<div class="text">
+									<h2>Online Help</h2>
+									<p>Chatbot of this website helps you to get the best hospitals.</p>
+									<a href="chatbot.html" class="more"></a>
+								</div>
+							</li>
+						</ul>
+					</section>
+				</div>
+				<div class="grid-row">
+					<section class="services">
+						<ul>
+							<li>
+								<a class="pic"><i class="fa fa-leaf"></i></a>
+								<h2><a href="#">Appolo Hospotals</a></h2>
+								<p>It is the largest hospital chain in India, with a network of 71 owned and managed hospitals.</p>
+								<a href="heart.html" class="more fa fa-long-arrow-right"></a>
+							</li>
+							<li>
+								<a class="pic"><i class="fa fa-user-md"></i></a>
+								<div class="text">
+									<h2><a href="#">Fortis Hospitals</a></h2>
+									<p>It is one of the largest healthcare organizations in the country with 27 healthcare facilities, 4,300 operational beds and 400 diagnostics centers.</p>
+									<a href="fortis-chennai.html" class="more fa fa-long-arrow-right"></a>
+								</div>
+							</li>
+							<li>
+								<a class="pic"><i class="fa fa-clock-o"></i></a>
+								<h2><a href="#">Medanta Hospitals</a></h2>
+								<p> The 175-bed facility is an extension of the flagship hospital in Indore and is known for providing advanced Emergency and Trauma Care.</p>
+								<a href="#" class="more fa fa-long-arrow-right"></a>
+							</li>
+							<li>
+								<a class="pic"><i class="fa fa-ambulance"></i></a>
+								<div class="text">
+									<h2><a href="#">Emergency Departments</a></h2>
+									<p>Fusce pellentesque lectus quis placerat ultrices. Nunc malesuada est vitae urna laoreet porta. Donec cursus tellus libero, non porttitor felis luctus ut.</p>
+									<a href="#" class="more fa fa-long-arrow-right"></a>
+								</div>
+							</li>
+						</ul>
+					</section>
+				</div>
+			<div class="copyrights">Designed By - Vinesh Katara and Darshan Challani</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.migrate.min.js"></script>
+		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+		<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+		<script type="text/javascript" src="js/jquery.fancybox-media.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.pie.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.categories.js"></script>
+		<script type="text/javascript" src="js/greensock.js"></script>
+		<script type="text/javascript" src="js/layerslider.transitions.js"></script>
+		<script type="text/javascript" src="js/layerslider.kreaturamedia.jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.superscrollorama.js"></script>
+		<script type="text/javascript" src="js/TweenMax.min.js"></script>
+		<script type="text/javascript" src="js/TimelineMax.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.core.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.widget.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.tabs.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-tabs-rotate.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.accordion.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tweet.js"></script>
+		<script type="text/javascript" src="js/jquery.easypiechart.js"></script>
+		<script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+	</body>
+</html>
