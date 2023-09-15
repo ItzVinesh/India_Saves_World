@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <title>India Saves Lifes</title>
+    <link rel="stylesheet" href="style.css">
 <body>
     
     <div class="chat-container">
@@ -34,6 +35,7 @@
             if (userMessage === "") return;
 
             appendMessage(userMessage, "user");
+
             let botResponse = generateBotResponse(userMessage);
 
             appendMessage(botResponse, "bot");
